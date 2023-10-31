@@ -17,10 +17,12 @@ end
 
 When('I click the search bar') do
   find('input[placeholder=\'Search for Vegetables and Fruits\']').click
+  sleep 1
 end
 
 When('I search for cucumber') do
   find('input[placeholder=\'Search for Vegetables and Fruits\']').send_keys 'cucumber'
+  sleep 1
 end
 
 Then('I should see cucumber in the search results') do
@@ -31,6 +33,7 @@ end
 
 When('I add cucumber to cart') do
   first(:button, 'ADD TO CART').click
+  sleep 1
 end
 
 Then('I should see cucumber in the cart') do
@@ -40,6 +43,7 @@ end
 
 When('I click proceed to checkout') do
   find('div[class=\'cart-preview active\'] button[type=\'button\']').click
+  sleep 1
 end
 
 Then('I should see the checkout page') do
@@ -49,6 +53,7 @@ end
 
 When('I click place order') do
   first(:button, 'Place Order').click
+  sleep 1
 end
 
 Then('I should see the final page') do
@@ -61,6 +66,7 @@ When('I select country') do
   find('option', text: 'United Kingdom').click
   find('input[type=\'checkbox\']').click
   first(:button, 'Proceed').click
+  sleep 1
 end
 
 Then('I should see the order confirmation page') do
