@@ -12,4 +12,5 @@ Then('I should see the Green Kart homepage') do
   expect(page).to have_css '.brand.greenLogo'
   expect(page).to have_css '.cart-header-navlink[href=\'#/offers\']'
   expect(page).to have_css '.cart-header-navlink[href=\'https://rahulshettyacademy.com/dropdownsPractise/\']'
+  expect(page).to have_css '.cart-icon'
 end

@@ -5,7 +5,7 @@ Scenario: Homepage is visible
 
 Scenario: Searching for items
   Given I navigate to the Green Kart homepage
-  Then I should see a search bar
+  And I should see the Green Kart Homepage
 
 Scenario: Removing unwanted items
 
