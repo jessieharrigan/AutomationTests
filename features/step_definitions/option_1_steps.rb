@@ -14,3 +14,19 @@ Then('I should see the Green Kart homepage') do
   expect(page).to have_css '.cart-header-navlink[href=\'https://rahulshettyacademy.com/dropdownsPractise/\']'
   expect(page).to have_css '.cart-icon'
 end
+
+When('I click the search bar') do
+  find('input[placeholder=\'Search for Vegetables and Fruits\']').click
+end
+
+When('I search for cucumber') do
+  find('input[placeholder=\'Search for Vegetables and Fruits\']').send_keys 'cucumber'
+end
+
+Then('I should see cucumber in the search results') do
+  expect(page).to have_css 'img[alt=\'Cucumber - 1 Kg\']'
+  expect(page).to have_button 'ADD TO CART'
+  expect(page).to have_text '48'
+end
+
+

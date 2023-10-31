@@ -5,8 +5,8 @@ Scenario: Homepage is visible
 
 Scenario: Searching for items
   Given I navigate to the Green Kart homepage
-  And I should see the Green Kart Homepage
+  And I should see the Green Kart homepage
+  When I click the search bar
+  And I search for cucumber
+  Then I should see cucumber in the search results
 
-Scenario: Removing unwanted items
-
-Scenario: Seeing total spend
