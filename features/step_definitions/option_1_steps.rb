@@ -6,5 +6,11 @@ end
 
 
 Then('I should see the Green Kart homepage') do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_title 'GreenKart - veg and fruits kart'
+  expect(page).to have_css 'input[placeholder=\'Search for Vegetables and Fruits\']'
+  expect(page).to have_css 'button[type=\'submit\']'
+  expect(page).to have_css '.brand.greenLogo'
+  expect(page).to have_css '.cart-header-navlink[href=\'#/offers\']'
+  expect(page).to have_css '.cart-header-navlink[href=\'https://rahulshettyacademy.com/dropdownsPractise/\']'
+  expect(page).to have_css '.cart-icon'
 end
