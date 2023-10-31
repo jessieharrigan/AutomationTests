@@ -29,4 +29,41 @@ Then('I should see cucumber in the search results') do
   expect(page).to have_text '48'
 end
 
+When('I add cucumber to cart') do
+  first(:button, 'ADD TO CART').click
+end
+
+Then('I should see cucumber in the cart') do
+  find('img[alt=\'Cart\']').click
+  expect(page).to have_text 'Cucumber - 1 Kg'
+end
+
+When('I click proceed to checkout') do
+  find('div[class=\'cart-preview active\'] button[type=\'button\']').click
+end
+
+Then('I should see the checkout page') do
+  expect(page).to have_text 'Cucumber - 1 Kg'
+  expect(page).to have_text '48'
+end
+
+When('I click place order') do
+  first(:button, 'Place Order').click
+end
+
+Then('I should see the final page') do
+  expect(page).to have_text 'Choose Country'
+  expect(page).to have_text 'Agree to the Terms & Conditions'
+end
+
+When('I select country') do
+  find('select').click
+  find('option', text: 'United Kingdom').click
+  find('input[type=\'checkbox\']').click
+  first(:button, 'Proceed').click
+end
+
+Then('I should see the order confirmation page') do
+  expect(page).to have_text 'Thank you, your order has been placed successfully'
+end
 

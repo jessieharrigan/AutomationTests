@@ -4,7 +4,7 @@ require 'capybara/dsl'
 require 'rspec'
 Capybara.run_server = false
 # Set default driver as Selenium with Chrome
-Capybara.default_driver = :selenium_chrome_headless
+Capybara.default_driver = :selenium_chrome
 #Set default selector as css
 Capybara.default_selector = :css
 #Syncronization related settings
